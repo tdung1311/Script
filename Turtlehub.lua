@@ -58,7 +58,7 @@ ImageButton.BorderSizePixel = 0
 ImageButton.Position = UDim2.new(0.120833337, 0, 0.0952890813, 0)
 ImageButton.Size = UDim2.new(0, 50, 0, 55)
 ImageButton.Draggable = true
-ImageButton.Image = "http://www.roblox.com/asset/?id=18285114199"
+ImageButton.Image = "https://ih1.redbubble.net/image.4945995938.8545/raf,360x360,075,t,fafafa:ca443f4786.jpg"
 
 UICorner.CornerRadius = UDim.new(0, 10) 
 UICorner.Parent = ImageButton
@@ -1592,16 +1592,16 @@ LPH_JIT_MAX(function()
 	end)
 end)()
 
-local SelectFastAttackMode = (SelectFastAttackMode or "AnDepZai Fast")
+local SelectFastAttackMode = (SelectFastAttackMode or "Turtle Fast")
 
-SelectedFastAttackMode = {"Normal Attack","Fast Attack","AnDepZai Fast"}
+SelectedFastAttackMode = {"Normal Attack","Fast Attack","Turtle Fast"}
 
 local function ChangeModeFastAttack(SelectFastAttackMode)
 	if SelectFastAttackMode == "Normal Attack" then
 		FireCooldown = 0.1
 	elseif SelectFastAttackMode == "Fast Attack" then
 		FireCooldown = 0.07
-	elseif SelectFastAttackMode == "AnDepZai Fast" then
+	elseif SelectFastAttackMode == "Turtle Fast" then
 		FireCooldown = 0.02
 	end
 end
