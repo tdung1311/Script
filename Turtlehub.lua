@@ -1309,10 +1309,10 @@ end
 
 ---------------SettingTab
 Tabs.infor:AddButton({
-        Title = "Discord | AnDepZai Hub",
+        Title = "Discord | Turtle Hub",
         Description = "Copy Link Discord",
         Callback = function()
-        setclipboard("https://discord.com/invite/EV7vagx6CT")
+        setclipboard("https://discord.gg/km9WpRSukT")
         end
     })
 ---------------TabStatus
