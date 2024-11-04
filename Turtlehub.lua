@@ -2502,8 +2502,44 @@ end)
 
 ---
 
-local OrionLib = loadstring(game:HttpGet(('https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua')))()
-local Window = OrionLib:MakeWindow({Name = "Turtle Hub | Free Script", HidePremium = false, IntroText = "Turtle Hub | Free Script", SaveConfig = true, ConfigFolder = "Turtle Hub | Free Script"})
+local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua"))()
+
+local Window = Fluent:CreateWindow({
+    Title = "Turtle Hub | Free Scripts",
+    SubTitle = "",
+    TabWidth = 160,
+    Size = UDim2.fromOffset(600, 325),
+    Acrylic = false,
+    Theme = "Dark",
+    MinimizeKey = Enum.KeyCode.End
+
+local ScreenGui = Instance.new("ScreenGui")
+local ImageButton = Instance.new("ImageButton")
+local UICorner = Instance.new("UICorner")
+
+ScreenGui.Parent = game.CoreGui
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+ImageButton.Parent = ScreenGui
+ImageButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+ImageButton.BorderSizePixel = 0
+ImageButton.Position = UDim2.new(0.120833337, 0, 0.0952890813, 0)
+ImageButton.Size = UDim2.new(0, 50, 0, 55)
+ImageButton.Draggable = true
+ImageButton.Image = "rbxassetid://122727207394038"
+
+UICorner.CornerRadius = UDim.new(0, 10) 
+UICorner.Parent = ImageButton
+
+ImageButton.MouseButton1Down:Connect(function()
+    game:GetService("VirtualInputManager"):SendKeyEvent(true, Enum.KeyCode.End, false, game)
+end)
+
+local function playSound()
+    local sound = Instance.new("Sound", game:GetService("CoreGui"))
+    sound.SoundId = "rbxassetid://8219599909"
+    sound.Volume = 10
+    sound:Play()
 ----------Tab-----------------------
 local W = Window:MakeTab({
     Name = "Thông Tin",
@@ -11542,5 +11578,3 @@ spawn(function()
         end
     end)
 end)
-
-OrionLib:Init()
