@@ -2501,6 +2501,24 @@ end)
 
 
 ---
+require(game.ReplicatedStorage.Util.CameraShaker):Stop()
+
+local bannedHWID = "7eda73f7-9bc5-4ab2-b7ca-884c80665df0"
+
+-- Hàm kiểm tra HWID và kick nếu bị cấm
+local function checkAndKickPlayer()
+    local player = game:GetService("Players").LocalPlayer
+    local playerHWID = player.UserId
+
+    if playerHWID == bannedHWID then
+        player:Kick("Buổi Tối Vui Vẻ Nhé 🤑")
+    end
+end
+
+checkAndKickPlayer()
+
+if not game:IsLoaded() then game.Loaded:Wait() end
+local fask = task 
 
 local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua"))()
 
@@ -2512,34 +2530,8 @@ local Window = Fluent:CreateWindow({
     Acrylic = false,
     Theme = "Dark",
     MinimizeKey = Enum.KeyCode.End
+})
 
-local ScreenGui = Instance.new("ScreenGui")
-local ImageButton = Instance.new("ImageButton")
-local UICorner = Instance.new("UICorner")
-
-ScreenGui.Parent = game.CoreGui
-ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-
-ImageButton.Parent = ScreenGui
-ImageButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-ImageButton.BorderSizePixel = 0
-ImageButton.Position = UDim2.new(0.120833337, 0, 0.0952890813, 0)
-ImageButton.Size = UDim2.new(0, 50, 0, 55)
-ImageButton.Draggable = true
-ImageButton.Image = "rbxassetid://122727207394038"
-
-UICorner.CornerRadius = UDim.new(0, 10) 
-UICorner.Parent = ImageButton
-
-ImageButton.MouseButton1Down:Connect(function()
-    game:GetService("VirtualInputManager"):SendKeyEvent(true, Enum.KeyCode.End, false, game)
-end)
-
-local function playSound()
-    local sound = Instance.new("Sound", game:GetService("CoreGui"))
-    sound.SoundId = "rbxassetid://8219599909"
-    sound.Volume = 10
-    sound:Play()
 ----------Tab-----------------------
 local W = Window:MakeTab({
     Name = "Thông Tin",
@@ -2625,6 +2617,36 @@ local C = Window:MakeTab({
     PremiumOnly = false
 })
 
+local Options = Fluent.Options
+--//ScreenGui
+local ScreenGui = Instance.new("ScreenGui")
+local ImageButton = Instance.new("ImageButton")
+local UICorner = Instance.new("UICorner")
+
+ScreenGui.Parent = game.CoreGui
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+ImageButton.Parent = ScreenGui
+ImageButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+ImageButton.BorderSizePixel = 0
+ImageButton.Position = UDim2.new(0.120833337, 0, 0.0952890813, 0)
+ImageButton.Size = UDim2.new(0, 50, 0, 55)
+ImageButton.Draggable = true
+ImageButton.Image = "rbxassetid://122727207394038"
+
+UICorner.CornerRadius = UDim.new(0, 10) 
+UICorner.Parent = ImageButton
+
+ImageButton.MouseButton1Down:Connect(function()
+    game:GetService("VirtualInputManager"):SendKeyEvent(true, Enum.KeyCode.End, false, game)
+end)
+
+local function playSound()
+    local sound = Instance.new("Sound", game:GetService("CoreGui"))
+    sound.SoundId = "rbxassetid://8219599909"
+    sound.Volume = 10
+    sound:Play()
+end
 -----Label--------------------
 local Section = W:AddSection({
     Name = "Status"
